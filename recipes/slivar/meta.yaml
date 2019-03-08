@@ -1,13 +1,13 @@
 {% set name = "slivar" %}
-{% set version = "0.0.5" %}
-{% set sha256hash = "82c5a5994123e46a766613a16d5b5a26b65bdaa785b0de38756a6fa50f2f07f6" %}
+{% set version = "0.0.6" %}
+{% set sha256hash = "df315e1f03ee4baa3d67e16e4a0ed32065ad3a1187550460b5170f424c142d6e" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/brentp/slivar/releases/download/v{{ version }}/slivar
+  url: https://github.com/brentp/slivar/releases/download/v{{ version }}/slivar_static
   sha256: {{ sha256hash }}
 
 build:
