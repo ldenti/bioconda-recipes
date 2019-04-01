@@ -13,7 +13,7 @@ source:
     - shared_library.patch
 
 build:
-  number: 2
+  number: 3
   skip: True  # [osx]
 
 requirements:
@@ -28,10 +28,13 @@ requirements:
     - bzip2
 
 test:
+  files:
+    - sample_test.fq
   commands:
     - (kmc 2>&1; true) | grep -q "K-Mer Counter (KMC) ver. {{ printed_version }}"
     - (kmc_dump 2>&1; true) | grep -q "KMC dump ver. {{ printed_version }}"
     - (kmc_tools 2>&1; true) | grep -q "kmc_tools ver. {{ printed_version }}"
+    - mkdir -p kmc_tmp ; kmc -m1 -k31 -t1 -fq sample_test.fq kmc.prefix kmc_tmp
 
 about:
   home: http://sun.aei.polsl.pl/kmc/

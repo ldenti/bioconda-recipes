@@ -5,8 +5,8 @@ export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
 export CXXFLAGS="${CXXFLAGS}"
 
-make CC=${CXX} CFLAGS=${CPPFLAGS}
-make CC=${CXX} CFLAGS=${CPPFLAGS} kmc_api/libkmc.so
+make CFLAGS=${CPPFLAGS}
+make CFLAGS=${CPPFLAGS} kmc_api/libkmc.so
 
 mkdir -p $PREFIX/bin
 mkdir -p $PREFIX/lib
